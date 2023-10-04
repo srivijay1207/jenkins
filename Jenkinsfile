@@ -11,6 +11,7 @@ pipeline {
               '''
             }
         }
+<<<<<<< HEAD:jenkinsfile
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -23,3 +24,7 @@ pipeline {
             }
         }
     }
+=======
+    }
+}
+>>>>>>> 7969790390e82dc323896fded556ed0eb0267d8c:Jenkinsfile
