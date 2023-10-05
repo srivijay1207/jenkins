@@ -8,7 +8,7 @@ pipeline {
         stage('Init') {
             steps {
                 sh'''
-                    cd session-02
+                    
                     ls -ltr
                     pwd
                     terraform init
@@ -18,7 +18,7 @@ pipeline {
         stage('Plan') {
             steps {
                 sh'''
-                    session-02
+                    
                     ls -ltr
                     pwd
                     terraform plan
@@ -35,7 +35,7 @@ pipeline {
             steps{
                 
                 sh '''
-                    session-02
+                    
                     ls -ltr
                     pwd
                     terraform apply -auto-approve
