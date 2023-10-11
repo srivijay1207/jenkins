@@ -10,7 +10,7 @@ pipeline {
                 sh'''
                     ls -ltr
                     pwd
-                    terraform init -upgrade
+                    terraform init
                 '''
             }
         }
