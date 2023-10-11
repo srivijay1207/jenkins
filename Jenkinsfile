@@ -8,17 +8,16 @@ pipeline {
         stage('Init') {
             steps {
                 sh'''
-                    cd jenkins
                     ls -ltr
                     pwd
-                    terraform init
+                    terraform init -upgrade
                 '''
             }
         }
         stage('Plan') {
             steps {
                 sh'''
-                    cd jenkins
+                    
                     ls -ltr
                     pwd
                     terraform plan
@@ -35,7 +34,7 @@ pipeline {
             steps{
                 
                 sh '''
-                    cd jenkins
+                    
                     ls -ltr
                     pwd
                     terraform apply -auto-approve
