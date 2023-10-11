@@ -41,7 +41,19 @@ pipeline {
                 '''
             }
         }
+        stage('destroy') {
+            steps{
+                
+                sh '''
+                    
+                    ls -ltr
+                    pwd
+                    terraform destroy -auto-approve
+                '''
+            }
+        }
     }
+
 
     post { 
         always { 
