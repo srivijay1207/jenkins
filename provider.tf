@@ -6,10 +6,10 @@ terraform {
     }
   }
    backend "s3" {
-    bucket   = "rs-remote-state-dev"
+    bucket   = "srivijay-dev-bucket"
     key = "jenkins-demo4"
     region = "us-east-1"
-    dynamodb_table = "dynamodb-table-dev"
+    dynamodb_table = "srivijay-dynamodb-table"
   }
 }
 
