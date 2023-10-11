@@ -8,7 +8,6 @@ pipeline {
         stage('Init') {
             steps {
                 sh'''
-                    
                     ls -ltr
                     pwd
                     terraform init -upgrade
