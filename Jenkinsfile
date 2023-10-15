@@ -31,23 +31,23 @@ pipeline {
                 sh 'sonar-scanner'
             }
         }
-        // stage('Approve') {
-        //     steps{
-        //         input "Shall I apply?"
-        //     }
-        // }
+        stage('Approve') {
+            steps{
+                input "Shall I apply?"
+            }
+        }
 
-        // stage('Apply') {
-        //     steps{
+        stage('Apply') {
+            steps{
                 
-        //         sh '''
+                sh '''
                     
-        //             ls -ltr
-        //             pwd
-        //             terraform apply -auto-approve
-        //         '''
-        //     }
-        // }
+                    ls -ltr
+                    pwd
+                    terraform apply -auto-approve
+                '''
+            }
+        }
         // stage('destroy') {
         //     steps{
                 
