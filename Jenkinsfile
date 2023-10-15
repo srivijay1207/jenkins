@@ -24,33 +24,40 @@ pipeline {
                 '''
             }
         }
-        stage('Approve') {
-            steps{
-                input "Shall I apply?"
+        //sonar-scanner command expect sonar-project.properties should be available
+        stage('Sonar Scan') {
+            steps {
+                sh 'ls -ltr'
+                sh 'sonar-scanner'
             }
         }
+        // stage('Approve') {
+        //     steps{
+        //         input "Shall I apply?"
+        //     }
+        // }
 
-        stage('Apply') {
-            steps{
+        // stage('Apply') {
+        //     steps{
                 
-                sh '''
+        //         sh '''
                     
-                    ls -ltr
-                    pwd
-                    terraform apply -auto-approve
-                '''
-            }
-        }
-        stage('destroy') {
-            steps{
+        //             ls -ltr
+        //             pwd
+        //             terraform apply -auto-approve
+        //         '''
+        //     }
+        // }
+        // stage('destroy') {
+        //     steps{
                 
-                sh '''
+        //         sh '''
                     
-                    ls -ltr
-                    pwd
-                    terraform destroy -auto-approve
-                '''
-            }
+        //             ls -ltr
+        //             pwd
+        //             terraform destroy -auto-approve
+        //         '''
+        //     }
         }
     }
 
